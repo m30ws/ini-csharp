@@ -180,8 +180,8 @@ class INI
 		{
 			// create the new section
 			section = new Hashtable();
-            inicontents.Add(section_name, section);
-        }
+			inicontents.Add(section_name, section);
+		}
 
 		section[key] = value;
 	}
@@ -200,11 +200,11 @@ class INI
 
 	public static Hashtable? GetSection(Hashtable? inicontents, string section_name)
 	{
-        if (inicontents == null || section_name == null)
-            return null;
+		if (inicontents == null || section_name == null)
+			return null;
 
-        return (Hashtable?)inicontents[section_name];
-    }
+		return (Hashtable?)inicontents[section_name];
+	}
 
 	public static bool Save(Hashtable? inicontents, string filename)
 	{
@@ -227,20 +227,20 @@ class INI
 				// Console.WriteLine("  - {0} ({1} props)", section, props.Count);
 				foreach (string key in props.Keys)
 				{
-                    wr.WriteLine("{0} = {1}", key, props[key]);
-                    // Console.WriteLine("    - |{0}| :: |{1}|", key, props[key] ?? "<none>");
+					wr.WriteLine("{0} = {1}", key, props[key]);
+					// Console.WriteLine("    - |{0}| :: |{1}|", key, props[key] ?? "<none>");
 				}
 
 				wr.WriteLine();
 
-            }
+			}
 		}
 		return true;
-    }
-        
+	}
+		
 	// Methods if used as an instance
 
-    public void Print()
+	public void Print()
 	{
 		Print(this._inicontents);
 	}
@@ -255,12 +255,12 @@ class INI
 		return Get(this._inicontents, section_name, key);
 	}
 
-    public Hashtable? GetSection(string section_name)
+	public Hashtable? GetSection(string section_name)
 	{
 		return GetSection(this._inicontents, section_name);
 	}
 
-    public bool Save(string filename)
+	public bool Save(string filename)
 	{
 		return Save(this._inicontents, filename);
 	}
